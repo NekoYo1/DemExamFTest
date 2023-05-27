@@ -1,0 +1,32 @@
+﻿<Page x:Class="DemExamFTest.Views.AddEdit"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DemExamFTest.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEdit">
+
+    <Grid Background="#ffffff ">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Наименование" FontSize="20" FontFamily="Comic Sans MS" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="0"/>
+            <TextBox Height="50" Width="200" Grid.Row="0" Text="{Binding Name}"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Количество звезд" FontSize="20" FontFamily="Comic Sans MS" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.RowSpan="2"/>
+            <TextBox Height="50" Width="200" Grid.Row="1" Text="{Binding CountOfStars}"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="Страна" FontSize="20" FontFamily="Comic Sans MS" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2"/>
+            <ComboBox Height="50" Width="200" Grid.Row="3" SelectedItem="{Binding Country}" x:Name="CmbCountry" DisplayMemberPath="Name"></ComboBox>
+        </StackPanel>
+        <Button Grid.Row="3" Content="Сохранить" x:Name="BtnSave" Click="BtnSave_Click"/>
+    </Grid>
+</Page>
